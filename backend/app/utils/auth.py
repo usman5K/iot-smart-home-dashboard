@@ -8,9 +8,8 @@ from sqlalchemy.orm import Session
 
 from backend.app.crud.user_crud import get_user_by_unique_id
 from backend.app.utils.database import get_db
-from backend.app.utils.settings import logger
+from backend.app.utils.settings import logger, base_settings
 
-SECRET_KEY = "e8b3b0e7c7b5d4c6a8c3e8f7e4c7e8b3e7c3b5c7"
 ALGORITHM = "HS256"
 
 reusable_oauth2 = HTTPBearer()
@@ -27,7 +26,7 @@ def get_authenticated_user(
     )
 
     try:
-        payload = jwt.decode(token.credentials, SECRET_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(token.credentials, base_settings.JWT_SECRET, algorithms=[ALGORITHM])
         user_unique_id: str = payload.get("unique_id")
 
         if user_unique_id is None:
@@ -49,4 +48,4 @@ def get_authenticated_user(
 
 def create_login_token(data: dict) -> str:
     data["exp"] = datetime.now(timezone.utc).timestamp() + 3600
-    return jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
+    return jwt.encode(data, base_settings.JWT_SECRET, algorithm=ALGORITHM)
