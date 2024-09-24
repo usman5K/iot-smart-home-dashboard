@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background); /* Make sure to define your theme color */
+    color: var(--primary-text);
+  }
+  
+  .title {
+    font-size: 96px;
+    font-weight: bold;
+    color: var(--primary-color); /* Match primary color of the app */
+    margin-bottom: 16px;
+  }
+  
+  .message {
+    font-size: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: var(--secondary-text); /* Secondary text color */
+  }
+  
+  .backLink {
+    font-size: 18px;
+    color: var(--link-color); /* Link color that matches theme */
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: var(--primary-color); /* Button-like styling */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .backLink:hover {
+    background-color: var(--primary-color); /* Change on hover */
+    color: var(--accent-color); /* Reverse colors on hover */
+  }
+  
