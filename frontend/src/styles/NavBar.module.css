@@ -1,0 +1,93 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color); /* Matches the primary color */
+    color: var(--accent-color); /* Accent color for text */
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.drawerIcon {
+    cursor: pointer;
+    margin-right: 1rem;
+    color: var(--accent-color); /* Matches text color */
+}
+
+.companyName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color); /* Company name color matches accent */
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+}
+
+.bellIcon {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    color: var(--accent-color); /* Matches icon color to accent */
+}
+
+.time {
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: var(--accent-color); /* Time color matches accent */
+}
+
+.avatar {
+    position: relative;
+    cursor: pointer;
+}
+
+.avatar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color-dark); /* Border to match dark primary color */
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--secondary-color); /* Background matches secondary color */
+    border: 1px solid var(--primary-color-dark); /* Border color matches dark primary */
+    padding: 0.5rem 1rem;
+    text-align: right;
+    z-index: 10;
+    color: var(--text-color); /* Dropdown text color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.avatar:hover .dropdown {
+    display: inline;
+}
+
+.dropdown li {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color); /* Link color matches primary */
+    text-decoration: none;
+    list-style: none;
+}
+
+.dropdown a:hover {
+    color: var(--primary-color-dark); /* Hover state for links */
+}
+
+@media (max-width: 768px) {
+    .drawerIcon {
+        display: none;
+    }
+
+    .companyName {
+        display: none;
+    }
+}

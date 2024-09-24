@@ -1,0 +1,14 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainLayout {
+    display: flex;
+}
+
+.contentArea {
+    margin-left: 8px;
+    padding: 2rem;
+    flex-grow: 1;
+}
