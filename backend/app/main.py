@@ -31,4 +31,4 @@ async def read_root():
     return {"message": "Welcome to the Smart Home Dashboard API"}
 
 
-app.include_router(routers)
+app.include_router(prefix="/api/v1", router=routers)
